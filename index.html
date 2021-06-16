@@ -111,18 +111,19 @@ function initClient() {
         style="display: none; margin-left: 25px">Revoke access</button>
 
 <div id="auth-status" style="display: inline; padding-left: 25px"></div><hr>
-
+  <button onclick="handleAnal()">Get Data</button>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script async defer src="https://apis.google.com/js/api.js"
         onload="this.onload=function(){};handleClientLoad()"
         onreadystatechange="if (this.readyState === 'complete') this.onload()">
 </script>
   <script>
-    axios.post("https://analyticsdata.googleapis.com/v1beta/properties/GA4_PROPERTY_ID:runReport",{"dateRanges": [{ "startDate": "2020-09-01", "endDate": "2020-09-15" }],
+    function handleAnal(){
+    axios.post("https://analyticsdata.googleapis.com/v1beta/properties/275895590:runReport",{"dateRanges": [{ "startDate": "2020-09-01", "endDate": "2020-09-15" }],
     "dimensions": [{ "name": "country" }],
     "metrics": [{ "name": "activeUsers" }]}).then((res)=>{
       console.log(res["data"]);
-    })
-    <script>
+    })}
+    </script>
 </body>
 </html>
