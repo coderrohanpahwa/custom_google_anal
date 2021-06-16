@@ -52,6 +52,7 @@ function initClient() {
      
       GoogleAuth = gapi.auth2.getAuthInstance();
       console.log("Google auth",GoogleAuth)
+      console.log(gapi.client.analytics)
       // Listen for sign-in state changes.
       GoogleAuth.isSignedIn.listen(updateSigninStatus);
 
