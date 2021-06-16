@@ -70,11 +70,10 @@ function initClient() {
     });
   
 
-    
+    console.log(gapi.client.analytics)
     
     
     gapi.client.analytics.data.ga.get({
-    'ids': 'ga:' + profileId,
     'start-date': '7daysAgo',
     'end-date': 'today',
     'metrics': 'ga:sessions'
