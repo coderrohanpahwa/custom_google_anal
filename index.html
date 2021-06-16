@@ -119,7 +119,7 @@ function initClient() {
 </script>
   <script>
     function handleAnal(){
-    axios.post("https://analyticsdata.googleapis.com/v1beta/properties/199598843:runReport",{"dateRanges": [{ "startDate": "2020-09-01", "endDate": "2020-09-15" }],
+    axios.post("https://analyticsdata.googleapis.com/v1beta/properties/275895590:runReport",{"dateRanges": [{ "startDate": "2020-09-01", "endDate": "2020-09-15" }],
     "dimensions": [{ "name": "country" }],
     "metrics": [{ "name": "activeUsers" }]}).then((res)=>{
       console.log(res["data"]);
