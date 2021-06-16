@@ -25,6 +25,7 @@ function initClient() {
       GoogleAuth.isSignedIn.listen(updateSigninStatus);
   });
 }
+  
   </script>
   <script>
   var GoogleAuth;
@@ -48,6 +49,8 @@ function initClient() {
         'discoveryDocs': [discoveryUrl],
         'scope': SCOPE
     }).then(function () {
+      
+      console.log("----------->",gapi.client.analytics.data);
       GoogleAuth = gapi.auth2.getAuthInstance();
       console.log("Google auth",GoogleAuth)
       // Listen for sign-in state changes.
