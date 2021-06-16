@@ -2,7 +2,8 @@
 <html>
 <head>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TT1S8GMHWH"></script>
-<script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
@@ -116,5 +117,12 @@ function initClient() {
         onload="this.onload=function(){};handleClientLoad()"
         onreadystatechange="if (this.readyState === 'complete') this.onload()">
 </script>
+  <script>
+    axios.post("https://analyticsdata.googleapis.com/v1beta/properties/GA4_PROPERTY_ID:runReport",{"dateRanges": [{ "startDate": "2020-09-01", "endDate": "2020-09-15" }],
+    "dimensions": [{ "name": "country" }],
+    "metrics": [{ "name": "activeUsers" }]}).then((res)=>{
+      console.log(res["data"]);
+    })
+    <script>
 </body>
 </html>
