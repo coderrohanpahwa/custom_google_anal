@@ -68,7 +68,7 @@ function initClient() {
         revokeAccess();
       });
     });
-  }
+  
 
     
     
@@ -86,6 +86,7 @@ function initClient() {
       // Log any errors.
       console.log(err);
   });
+    }
   function handleAuthClick() {
     if (GoogleAuth.isSignedIn.get()) {
       // User is authorized and has clicked "Sign out" button.
